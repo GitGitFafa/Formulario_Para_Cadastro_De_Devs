@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha em Javascript</title>
+</head>
+<body>
+  <form method="POST" action="FichaJS.html" onsubmit= "return EnviarDados();">
+    <table>
+      <tr>
+        <td>Nome:</td>
+        <td><input type="text" name="nome" id="nome"></td>
+      </tr>
+
+      <tr>
+        <td>Idade:</td>
+        <td><input type="text" name="idade" id="idade"></td>
+      </tr>
+      <tr>
+        <td>Peso:</td>
+        <td><input type="text" name="peso" id="peso"></td>
+      </tr>
+      <tr>
+        <td>Altura:</td>
+        <td><input type="text" name="altura" id="altura"></td>
+      </tr>
+      <tr>
+        <td>Sexo:</td>
+        <td>
+       <select name="sexo" id="sexo">
+        <option value="Selecione" >Selecione</option>
+         <option value="F">F</option>
+         <option value="M">M</option> 
+       </select>
+         </td>
+      </tr>
+      <tr>
+          <td>
+            <input type="submit" value="Enviar Dados">
+          </td>
+      </tr>
+    </table>
+
+
+  </form>
+  <script>
+    function EnviarDados(){
+      var nome= document.getElementById("nome").value;
+      var idade= document.getElementById("idade").value;
+      var peso= document.getElementById("peso").value;
+      var altura= document.getElementById("altura").value;
+      var sexo= document.getElementById("sexo").value;
+    
+      if (nome.length <2 || nome.length>30)
+        alert('Tamanho do nome inválido.');
+      else{
+        if(idade <= 0 || idade>=100)
+          alert('Idade inválida.');
+        else{
+          if(peso <= 0)
+          alert('Peso inválido.');
+          else{
+            if (altura < 0)
+              alert('altura inválida.');
+            else{
+              if(sexo != 'F' && sexo !='M')
+                alert('Sexo inválido.')
+            else
+              alert('Cadastro realizado com sucesso\nNome : '+nome + '\nIdade: ' +idade+ '\nPeso: ' +peso+ '\nAltura: ' +altura+ '\nSexo: '+sexo);
+            }
+          }
+        }
+      
+        }
+
+    
+    };
+
+  </script>
+</body>
+</html>
